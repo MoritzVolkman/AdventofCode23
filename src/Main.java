@@ -5,8 +5,11 @@ import java.lang.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Day1 CurrentDay = new Day1();
-        System.out.println("Value for part 1: " + CurrentDay.part1());
-        System.out.println("Value for part 2: " + CurrentDay.part2());
+        Day1 day1 = new Day1();
+        Day2 day2 = new Day2();
+        System.out.println("Value for Day 1 part 1: " + day1.part1());
+        System.out.println("Value for Day 1 part 2: " + day1.part2());
+        System.out.println("Value for Day 2 part 1: " + day2.part1());
+        System.out.println("Value for Day 2 part 2: " + day2.part2());
     }
 }

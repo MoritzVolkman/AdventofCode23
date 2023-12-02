@@ -42,7 +42,7 @@ public class Day1 {
             val = Integer.parseInt(tempNum);
             sum += val;
         }
-        System.out.println("The sum of all calibration values is: " + sum);
+        //System.out.println("The sum of all calibration values is: " + sum);
         return(sum);
     }
     public int part2() throws Exception{
@@ -112,7 +112,7 @@ public class Day1 {
             val = Integer.parseInt(tempNum);
             sum += val;
         }
-        System.out.println("The sum of all calibration values is: " + sum);
+        //System.out.println("The sum of all calibration values is: " + sum);
         return(sum);
     }
 }

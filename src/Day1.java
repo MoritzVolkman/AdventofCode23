@@ -4,8 +4,6 @@ import java.io.FileReader;
 import java.util.Arrays;
 
 public class Day1 {
-    public static void main(String[] args) throws Exception{
-    }
     public int part1() throws Exception{
         //st is the line that is read from the buffer, sum is the overall sum of calib. values
         String st;

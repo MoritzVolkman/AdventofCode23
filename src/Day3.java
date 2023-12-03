@@ -7,37 +7,18 @@ import java.lang.Character;
 
 public class Day3 {
     public int part1() throws Exception{
-        File input = new File("Inputs\\day3.txt");
-        String st;
-        int i = 0;
-        int j = 0;
-        int sum = 0;
-        boolean[][] symbols = new boolean[150][150];
-        char[][] data = new char[150][150];
-        //creates a buffered Reader that reads one line at a time
-        BufferedReader br = new BufferedReader(new FileReader(input));
-        while((st = br.readLine()) != null){
-                for (char ch : st.toCharArray()) {
-                    data[i][j] = ch;
-                    if(ch != '.' && !Character.isDigit(ch)) {
-                        symbols[i][j] = true;
-                    }
-                    if (j <= st.length()) {
-                        j += 1;
-                    }
-                }
-            j = 0;
-            i += 1;
-            }
-        return findValues(data, symbols);
+        return parse(false);
     }
 
     public int part2() throws Exception{
+        return parse(true);
+    }
+
+    public int parse(boolean part2) throws Exception{
         File input = new File("Inputs\\day3.txt");
         String st;
         int i = 0;
         int j = 0;
-        int sum = 0;
         boolean[][] symbols = new boolean[150][150];
         char[][] data = new char[150][150];
         //creates a buffered Reader that reads one line at a time
@@ -45,8 +26,15 @@ public class Day3 {
         while((st = br.readLine()) != null){
             for (char ch : st.toCharArray()) {
                 data[i][j] = ch;
-                if(ch == '*') {
-                    symbols[i][j] = true;
+                if(!part2) {
+                    if (ch != '.' && !Character.isDigit(ch)) {
+                        symbols[i][j] = true;
+                    }
+                }
+                else{
+                    if(ch == '*') {
+                        symbols[i][j] = true;
+                    }
                 }
                 if (j <= st.length()) {
                     j += 1;
@@ -55,7 +43,12 @@ public class Day3 {
             j = 0;
             i += 1;
         }
-        return findValues2(data, symbols);
+        if(!part2) {
+            return findValues(data, symbols);
+        }
+        else{
+            return findValues2(data, symbols);
+        }
     }
     public int findValues(char[][] data, boolean[][] symbols) throws Exception{
         int sum = 0;
